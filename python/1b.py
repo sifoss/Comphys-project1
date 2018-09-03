@@ -1,7 +1,7 @@
 import numpy as np
 import time
 
-n = 10
+n = 100000
 
 x = np.linspace(0,1,n+2)
 h = 1./(n+1)
