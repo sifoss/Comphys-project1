@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    int n = 10;
+    int n = 1000000;
     double h = 1./(n+1);
 
     double *b,*d,*x,*f,*u;

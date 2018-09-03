@@ -1,12 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
-
+#include <time.h>
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    int n = 100;
+    int n = 1000000;
     double h = 1./(n+1);
 
     double *a,*b,*c,*d,*x,*f,*u;
@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     x = new double[n+2];
     f = new double[n+2];
     u = new double[n+2];
+    double start, stop;
 
     for (int i = 0; i<n+2;i++){
         x[i] = i*h;
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
     c[-1] = 0;
     double cof;
 
-
+    start = clock();
     for (int i=1;i<n;i++){
         cof     = a[i]/b[i-1];
         b[i]   -= cof*c[i-1];
@@ -50,11 +51,11 @@ int main(int argc, char *argv[])
         d[i] -= (c[i-1]/b[i])*d[i+1];
     }
 
-
+    stop = clock();
     for (int i = 0; i<n;i++){
         d[i+1] = d[i+1]/b[i];
     }
-
+    printf("%f\n", (stop-start)/CLOCKS_PER_SEC);
     ofstream outfile;
     outfile.open("outfile.txt");//argv[1])
     for (int i = 0; i<n+2;i++){
