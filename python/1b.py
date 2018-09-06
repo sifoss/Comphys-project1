@@ -1,13 +1,12 @@
 import numpy as np
 import time
 
-n = 100000
-
+n = 10
 x = np.linspace(0,1,n+2)
 h = 1./(n+1)
 
 
-# diagonalene i matrisen
+# de tre diagonalenei dentridiagonale matrisen, fra venstre til høyre
 a = np.zeros(n)-1
 b = np.zeros(n)+2
 c = np.zeros(n)-1
@@ -45,7 +44,7 @@ for i in range(1,n):
 for i in range(n-1,0,-1):
 	d[i] -= (c[i-1]/b[i])*d[i+1]
 
-print d
+print(d)
 
 d[1:-1] = d[1:-1]/b
 end = time.time()
