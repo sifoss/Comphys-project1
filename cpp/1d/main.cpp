@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    int N = 1+100000000;
+    int N = 1+10000000;
     double *err;
     err = new double[int(floor(log10(N)))];
     for (int n = 10;n<N;n*=10){
@@ -57,12 +57,12 @@ int main()
             d[i+1] = d[i+1]/b[i];
 
         }
-        for(int i = 1; i < n+1;i++){
-            eps[i] = log10(abs(d[i]-u[i])/u[i]);
+        for(int i = 0; i < n+2;i++){
+            eps[i] = log10(abs(u[i]-d[i])/u[i]);
 
 
         }
-        err[int(floor(log10(n)))-1] = *min_element(eps,eps+n+2);
+        err[int(floor(log10(n)))-1] = *max_element(eps+1,eps+n+1);
         cout<<err[int(floor(log10(n)))-1]<<endl;
 
 
