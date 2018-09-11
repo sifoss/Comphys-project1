@@ -1,0 +1,18 @@
+0.000002 secs with n= 10 
+0.000003 secs with n= 10 
+
+0.000004 secs with n= 100 
+0.000003 secs with n= 100 
+
+0.000032 secs with n= 1000 
+0.000030 secs with n= 1000 
+
+0.000308 secs with n= 10000 
+0.000316 secs with n= 10000 
+
+G 0.002998 secs with n= 100000 
+S 0.002909 secs with n= 100000
+
+0.037947 secs with n= 1000000 
+0.031477 secs with n= 1000000 
+
